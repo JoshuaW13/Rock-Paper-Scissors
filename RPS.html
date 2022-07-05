@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay (){
+            let plays = ["rock", "paper", "scissors"]
+            return plays[Math.floor(Math.random()*3)]
+        }
+
+        function playGame(playerSelection, computerSelection){
+            console.log("The computer played "+ computerSelection+ " and you have played "+playerSelection)
+            if(playerSelection.localeCompare(computerSelection) == 0){
+                console.log("You have tied!")
+
+            }
+            else if (playerSelection.localeCompare("rock") == 0){
+                if(computerSelection.localeCompare("scissors") == 0){
+                    console.log("You win!")
+                }
+                else if(computerSelection.localeCompare("paper") == 0){
+                    console.log("You lose!")
+                }
+            }
+            else{
+                if(playerSelection.localeCompare("scissors") == 0 && computerSelection.localeCompare("rock")==0){
+                    console.log(" You lose!")
+                }
+                else if(playerSelection.length>computerSelection.length){
+                    console.log(" You win!")
+                }
+                else if(playerSelection.length<computerSelection.length){
+                    console.log(" You lose!")
+                }
+            }
+
+        }
+        let playAgain = true
+
+        let input = prompt("Enter rock paper or scissors")
+        playGame(input.toLowerCase(),computerPlay())
+        
+
+    </script>
+</body>
+</html>
