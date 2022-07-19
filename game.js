@@ -41,6 +41,7 @@ function playGame(playerSelection, computerSelection){
 }
 function rockWasClcicked(){
     playGame('rock',computerPlay());
+    
 }
 function paperWasClcicked(){
     playGame('paper',computerPlay());
@@ -49,14 +50,28 @@ function scissorsWasClcicked(){
     playGame('scissors',computerPlay());
 }
 
-let rock = document.querySelector(" .rock");
-rock.addEventListener('click', rockWasClcicked )
+function determinePlay(e){
+    let classes = this.classList
+    if(classes.contains('rock')){rockWasClcicked()}
+    if(classes.contains('paper')){paperWasClcicked()}
+    if(classes.contains('scissors')){scissorsWasClcicked()}
+    let message = document.getElementById('playAgain');
+    message.style.visibility = 'visible'
+    let weapons = document.querySelectorAll('.buttonContainer');
+    weapons.forEach(weapon => weapon.removeEventListener('click', determinePlay))
+}
+
+let weapons = document.querySelectorAll('.buttonContainer');
+weapons.forEach(weapon => weapon.addEventListener('click',determinePlay, {once: true})
+);
+/*let rock = document.querySelector(" .rock");
+rock.addEventListener('click', rockWasClcicked, {once: true} )
 
 let paper = document.querySelector(" .paper");
-paper.addEventListener('click', paperWasClcicked )
+paper.addEventListener('click', paperWasClcicked, {once: true})
 
 let scissors = document.querySelector(" .scissors");
-scissors.addEventListener('click', scissorsWasClcicked )
+scissors.addEventListener('click', scissorsWasClcicked, {once: true} )
 /*function game(){
     let score = 0
     for(let i =0; i<5; i++){
