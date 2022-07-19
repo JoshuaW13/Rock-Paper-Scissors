@@ -45,4 +45,14 @@ p{
     font-size: large;
     text-align: center;
 }
+a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  larger;
+    margin: 30px;
+    padding: 10px;
+    color: black;
+    border: solid white;
+    background-color: white;
+}
 
