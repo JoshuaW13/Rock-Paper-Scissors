@@ -1,0 +1,58 @@
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+body{
+    background-color: black;
+
+}
+
+.title{
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttonContainer{
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: auto;
+    margin: 20px;
+}
+
+p{
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.results{
+    visibility: hidden;
+    margin-top:100px;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  larger;
+    margin: 30px;
+    padding: 10px;
+    color: black;
+    border: solid white;
+    background-color: white;
+}
+
