@@ -6,9 +6,8 @@
 }
 
 img{
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    margin: 20px;
 }
 
 body{
@@ -25,9 +24,8 @@ body{
 }
 
 .buttonContainer{
-    align-items: center;
-    justify-content: center;
     width: 20%;
+    max-width: 150px;
     height: auto;
     margin: 20px;
 }
@@ -40,7 +38,7 @@ p{
 
 .results{
     visibility: hidden;
-    margin-top:100px;
+    margin-top:60px;
     color: white;
     font-size: large;
     text-align: center;

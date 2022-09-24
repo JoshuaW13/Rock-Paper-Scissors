@@ -50,6 +50,32 @@ function scissorsWasClcicked(){
     playGame('scissors',computerPlay());
 }
 
+function changePic(){
+    let classes = this.classList;
+    if(classes.contains('rock')){
+        this.src = "images/Rockgif.gif";        
+    }
+    if(classes.contains('paper')){
+        this.src = "images/papaergif.gif"; 
+    }
+    if(classes.contains('scissors')){
+        this.src = "images/scissorsgif.gif";
+    }
+}
+
+function changePicBack(){
+    let classes = this.classList;
+    if(classes.contains('rock')){
+        this.src = "images/rockStill.png";        
+    }
+    if(classes.contains('paper')){
+        this.src = "images/paperstill.png"; 
+    }
+    if(classes.contains('scissors')){
+        this.src = "images/scissorsstill.png";
+    }
+}
+
 function determinePlay(e){
     let classes = this.classList
     if(classes.contains('rock')){rockWasClcicked()}
@@ -59,11 +85,35 @@ function determinePlay(e){
     message.style.visibility = 'visible'
     let weapons = document.querySelectorAll('.buttonContainer');
     weapons.forEach(weapon => weapon.removeEventListener('click', determinePlay))
+    arms.forEach(arm=>arm.removeEventListener('mouseover',changePic));
+    arms.forEach(arm=>arm.removeEventListener('mouseout',changePicBack));
+    arms.forEach(function(arm){
+        let classes = arm.classList;
+        if(classes.contains('rock')){
+            arm.src = "images/rockStill.png";        
+        }
+        if(classes.contains('paper')){
+            arm.src = "images/paperstill.png"; 
+        }
+        if(classes.contains('scissors')){
+            arm.src = "images/scissorsstill.png";
+        }
+
+    });
 }
 
 let weapons = document.querySelectorAll('.buttonContainer');
+
+let arms = document.querySelectorAll('.weapon');
+
+arms.forEach(arm => arm.addEventListener('mouseover',changePic));
+
+arms.forEach(arm => arm.addEventListener('mouseout',changePicBack));
+
 weapons.forEach(weapon => weapon.addEventListener('click',determinePlay, {once: true})
 );
+
+
 /*let rock = document.querySelector(" .rock");
 rock.addEventListener('click', rockWasClcicked, {once: true} )
 
